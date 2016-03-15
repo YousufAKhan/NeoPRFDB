@@ -1,3 +1,4 @@
 # NeoPRFDB
-A sexier PRFDB ;)
-By Ashton Trey Belew and Yousuf Anwar Khan
+
+A cleanroom implementation of the prfdb
+
