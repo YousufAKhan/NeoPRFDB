@@ -1,12 +1,10 @@
 package PRFNeo;
-## Time-stamp: <>
+## Time-stamp: <2016-03-24 20:57:05 abelew>
+use Moose;
 use common::sense;
 use diagnostics;
 
-our @ISA = qw"Exporter";
-our @EXPORT = qw"";
-our $AUTOLOAD;
-$VERSION = '201603';
+has config => (is => 'rw');
 
 =head1 NAME
 
@@ -31,18 +29,7 @@ The goal of this project is to fix all these problems, make it easier to use, re
 
 =over 4
 
-=item C<new>
 
-    new() instantiates a new PRFNeo object.  This is in the 'old' fashion, perhaps I should
-    do this using one of Perl's fancy new systems, like Moose?
-
-=cut
-sub new {
-    my ($class, %args) = @_;
-    my $me = bless {
-    }, $class;
-    return(me);
-}
 
 =back
 
