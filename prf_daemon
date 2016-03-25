@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+use common::sense;
+use autodie;
+use diagnostics;
+use Mojolicious::Lite;
+use lib "lib";
+use local::lib;
+use PRFNeo;
+
+# Documentation browser under "/perldoc"
+plugin 'PODRenderer';
+
+get '/' => sub {
+  my $c = shift;
+  $c->render(template => 'index');
+};
+
+app->start;
+__DATA__
+
+@@ index.html.ep
+% layout 'default';
+% title 'Welcome';
+<h1>Welcome to the Mojolicious real-time web framework!</h1>
+To learn more, you can browse through the documentation
+<%= link_to 'here' => '/perldoc' %>.
+
+In theory, mojolicious can update on the fly without restarting, lets test that here.<br>
+ahh to do that you need to start it with 'morbo'...<br>
+Did it work? holy shit it did!<br>
+ok I was skeptical but this is the coolest thing ever.<br>
+
+@@ layouts/default.html.ep
+<!DOCTYPE html>
+<html>
+  <head><title><%= title %></title></head>
+  <body><%= content %></body>
+</html>
